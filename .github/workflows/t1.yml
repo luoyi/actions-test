@@ -18,3 +18,4 @@ jobs:
         df -h
         cat /proc/cpuinfo
         free -m
+        pwd
