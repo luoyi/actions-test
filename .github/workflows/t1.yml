@@ -14,3 +14,6 @@ jobs:
         LAST_NAME: Octocat
       run: |
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        uname -a
+        df -h
+        cat /proc/cpuinfo
