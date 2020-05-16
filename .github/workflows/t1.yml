@@ -17,3 +17,4 @@ jobs:
         uname -a
         df -h
         cat /proc/cpuinfo
+        free -m
