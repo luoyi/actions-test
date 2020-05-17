@@ -20,19 +20,24 @@ function prepare_env {
 				libtool autopoint device-tree-compiler antlr3 gperf
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean	
-};
+}
 
 function download_sdk {
-	ls -alh
+	THE_DIR=$(pwd)
 	mkdir -p "$WORK_DIR"
 	cd "$WORK_DIR"
-	wget "$THE_SDK"
+	wget -q "$THE_SDK"
 	tar xf "$THE_SDK_FILE"
 	cd "$THE_SDK_DIR"
-	pwd
+	cp ${THE_DIR}/ipq40xx.config ./.config
 	ls -alh
-};
+	./scripts/feeds update -a
+	./scripts/feeds install -a
+	git clone https://github.com/shadowsocks/openwrt-feeds.git package/feeds
+	git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
+	make package/simple-obfs/compile V=99
+}
 
-# prepare_env
+prepare_env
 download_sdk
 
