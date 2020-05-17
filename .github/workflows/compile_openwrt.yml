@@ -11,4 +11,4 @@ jobs:
       - name: Do the job
         run: |
           ls -alh
-          ./copmile_openwrt.sh
+          ./compile_openwrt.sh
