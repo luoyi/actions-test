@@ -23,6 +23,7 @@ function prepare_env {
 };
 
 function download_sdk {
+	ls -alh
 	mkdir -p "$WORK_DIR"
 	cd "$WORK_DIR"
 	wget "$THE_SDK"
