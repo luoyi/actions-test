@@ -1,0 +1,13 @@
+name: Compile OpenWRT
+on: release
+
+jobs:
+  my-job:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@v2
+      - name: Do the job
+        run: |
+          ./copmile_openwrt.sh
