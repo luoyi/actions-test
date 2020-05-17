@@ -1,5 +1,5 @@
 name: Compile OpenWRT
-on: release
+on: push
 
 jobs:
   my-job:
