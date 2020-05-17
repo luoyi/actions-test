@@ -36,6 +36,7 @@ function download_sdk {
 	git clone https://github.com/shadowsocks/openwrt-feeds.git package/feeds
 	git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
 	make package/simple-obfs/compile V=99
+	tree bin
 }
 
 prepare_env
