@@ -4,10 +4,11 @@
 #2  fetch some required packages
 #3  compile the whole world
 
+THE_OPENWRT_VER="19.07.3"
 
-THE_SDK_DIR="openwrt-sdk-19.07.2-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64"
+THE_SDK_DIR="openwrt-sdk-${THE_OPENWRT_VER}-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64"
 THE_SDK_FILE="${THE_SDK_DIR}.tar.xz"
-THE_SDK="https://downloads.openwrt.org/releases/19.07.2/targets/ipq40xx/generic/$THE_SDK_FILE"
+THE_SDK="https://downloads.openwrt.org/releases/${THE_OPENWRT_VER}/targets/ipq40xx/generic/$THE_SDK_FILE"
 WORK_DIR="$HOME/openwrt_work"
 
 function prepare_env {
