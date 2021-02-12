@@ -19,3 +19,5 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v2
