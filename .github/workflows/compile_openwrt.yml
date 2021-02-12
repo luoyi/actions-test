@@ -11,6 +11,8 @@ jobs:
       - name: Do the job
         run: ./compile_openwrt.sh
         shell: bash
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v2
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -19,5 +21,3 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v2
