@@ -1,0 +1,21 @@
+name: Test Release Action
+on: workflow_dispatch
+
+jobs:
+  my-job:
+    name: Test Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@v2
+      - name: Do the job
+        run: |
+          ls -alh
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: *.md
+        tag: my test tag
+        overwrite: true
+        file_glob: true
