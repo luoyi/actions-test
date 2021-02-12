@@ -11,13 +11,11 @@ jobs:
       - name: Do the job
         run: ./compile_openwrt.sh
         shell: bash
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v2
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: bin/packages/arm_cortex-a7_neon-vfpv4/base/* bin/packages/arm_cortex-a7_neon-vfpv4/packages/*
+          file: /home/runner/openwrt_work/openwrt-sdk-19.07.4-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64/bin/packages/arm_cortex-a7_neon-vfpv4/base/* /home/runner/openwrt_work/openwrt-sdk-19.07.4-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64/bin/packages/arm_cortex-a7_neon-vfpv4/packages/*
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
