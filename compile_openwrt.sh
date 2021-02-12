@@ -38,6 +38,9 @@ function download_sdk {
 	git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
 	make package/simple-obfs/compile V=99
 	tree bin
+	mkdir -p "$WORK_DIR/output"
+	cp bin/packages/arm_cortex-a7_neon-vfpv4/base/* $WORK_DIR/output/
+	cp bin/packages/arm_cortex-a7_neon-vfpv4/packages/* $WORK_DIR/output/
 }
 
 prepare_env
