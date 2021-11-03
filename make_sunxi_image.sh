@@ -27,7 +27,7 @@ function compile_uboot {
   ls -alh u-boot-sunxi-with-spl.bin  boot.scr
 	mkdir -p "$WORK_DIR/output"
 	cp u-boot-sunxi-with-spl.bin  boot.scr $WORK_DIR/output/
-  ls -alh $WORK_DIR/output/
+  ls -alh $WORK_DIR/output/*
 }
 
 
