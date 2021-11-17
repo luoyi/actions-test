@@ -1,0 +1,24 @@
+name: Compile K2 Lede
+on: workflow_dispatch
+
+jobs:
+  my-job:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@v2
+      - name: Do the job
+        run: ./compile_k2_lede.sh
+        shell: bash
+      - name: Show the File
+        run: tree /home/runner/k2_lede
+        shell: bash
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/k2_lede/output/*
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
