@@ -13,14 +13,14 @@ function k2_lede {
 	WORK_DIR="$HOME/k2_lede"
 	mkdir -p "$WORK_DIR"
 	cd "$WORK_DIR"
-	wget 'https://github.com/coolsnowwolf/lede/archive/refs/tags/20211107.tar.gz'
+	wget -q 'https://github.com/coolsnowwolf/lede/archive/refs/tags/20211107.tar.gz'
 	tar xf 20211107.tar.gz
 	cd lede-20211107/
 	./scripts/feeds update -a
 	./scripts/feeds install -a
-	make -j8 download V=s
+	make -j8 download
 	cp ${THE_DIR}/k2_lede_config ./.config
-	make -j2 V=s
+	make -j2 defconfig download clean world
 }
 
 prepare_env
