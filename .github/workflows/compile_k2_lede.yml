@@ -12,7 +12,7 @@ jobs:
         run: ./compile_k2_lede.sh
         shell: bash
       - name: Show the File
-        run: tree /home/runner/k2_lede
+        run: tree /home/runner/k2_lede/bin
         shell: bash
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
