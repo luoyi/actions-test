@@ -18,9 +18,10 @@ function k2_lede {
 	cd lede-20211107/
 	./scripts/feeds update -a
 	./scripts/feeds install -a
-	make -j8 download
+	make download
 	cp ${THE_DIR}/k2_lede_config ./.config
-	make -j2 defconfig download clean world
+	make defconfig
+	make -j2 
 }
 
 prepare_env
