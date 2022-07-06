@@ -4,7 +4,7 @@
 #2  fetch some required packages
 #3  compile the whole world
 
-THE_OPENWRT_VER="21.02.1"
+THE_OPENWRT_VER="21.02.3"
 
 THE_SDK_DIR="openwrt-sdk-${THE_OPENWRT_VER}-ipq40xx-generic_gcc-8.4.0_musl_eabi.Linux-x86_64"
 THE_SDK_FILE="${THE_SDK_DIR}.tar.xz"
